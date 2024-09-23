@@ -26,4 +26,11 @@ public class TestController {
         Thread.sleep(i);
         return this.studentService.getById(id);
     }
+    // 这个请求不会被记录到sys_log
+    @RequestMapping( value = "/querystudent1", method = RequestMethod.GET)
+    public Student queryStudentBySno1(String id) throws InterruptedException {
+        int i = (int) (Math.random() * 1000);
+        Thread.sleep(i);
+        return this.studentService.getById(id);
+    }
 }
